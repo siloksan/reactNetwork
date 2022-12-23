@@ -5,8 +5,7 @@ import MyAvatar from "../../Profile/MyAvatar/MyAvatar";
 
 const SideBarItem = (props) => {
     let path = '/sidebar/' + props.id;
-
-    return (<div className={classes.dialog + " " + classes.active}>
+    return (<div>
         <MyAvatar/>
         <NavLink to={path}>{props.name}</NavLink>
     </div>)
