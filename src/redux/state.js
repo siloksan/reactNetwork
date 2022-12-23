@@ -1,3 +1,5 @@
+import React from "react";
+
 let state = {
     dialogsPage: {
         dialogs: [{id: 1, name: 'John'}, {id: 2, name: 'Fiodor'}, {id: 3, name: 'Victor'}, {
@@ -11,7 +13,10 @@ let state = {
         posts: [{id: 1, post: 'Hi, how are you?', like: 50}, {id: 2, post: 'It\'s my first post!', like: 20}, {
             id: 2, post: 'You look nice', like: 23
         }],
-    }
+    },
+    // imgAvatar: <img
+    //     src="https://u.kanobu.ru/articles/pics/7e6dc974-43f4-4ad0-9a55-2465566e9662.jpg"
+    //     alt="avatar"/>
 }
 
 export default state;
