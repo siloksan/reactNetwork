@@ -14,6 +14,7 @@ let state = {
             id: 2, post: 'You look nice', like: 23
         }],
     },
+    sideBar: [{id: 1, name: 'John'}, {id: 2, name: 'Fiodor'}, {id: 3, name: 'Maxim'}]
     // imgAvatar: <img
     //     src="https://u.kanobu.ru/articles/pics/7e6dc974-43f4-4ad0-9a55-2465566e9662.jpg"
     //     alt="avatar"/>

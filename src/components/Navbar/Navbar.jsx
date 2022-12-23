@@ -10,6 +10,7 @@ const Navbar = () => {
         <div className={classes.item}><NavLink to='/news' className={setActive}>News</NavLink></div>
         <div className={classes.item}><NavLink to='/music' className={setActive}>Music</NavLink></div>
         <div className={classes.item}><NavLink to='/settings' className={setActive}>Settings</NavLink></div>
+        <div className={classes.item}><NavLink to='/sidebar' className={setActive}>SideBar</NavLink></div>
     </nav>)
 }
 export default Navbar;

@@ -11,20 +11,20 @@
     color: gold;
 }
 
-.dialogsItem img {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-}
+/*.dialogsItem img {*/
+/*    width: 60px;*/
+/*    height: 60px;*/
+/*    border-radius: 30px;*/
+/*}*/
 
 .messages {
+background-color: khaki;
+}
+
+.messages .message1 {
 
 }
 
-.messages .message1{
-
-}
-
-.messages .message2{
+.messages .message2 {
     text-align: end;
 }

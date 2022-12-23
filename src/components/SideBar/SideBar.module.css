@@ -1,0 +1,30 @@
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*.dialogsItem .dialog {*/
+/*    padding: 5px;*/
+/*}*/
+
+/*.dialogsItem .active {*/
+/*    color: gold;*/
+/*}*/
+
+/*!*.dialogsItem img {*!*/
+/*!*    width: 60px;*!*/
+/*!*    height: 60px;*!*/
+/*!*    border-radius: 30px;*!*/
+/*!*}*!*/
+
+/*.messages {*/
+/*    background-color: khaki;*/
+/*}*/
+
+/*.messages .message1 {*/
+
+/*}*/
+
+/*.messages .message2 {*/
+/*    text-align: end;*/
+/*}*/
