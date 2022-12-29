@@ -5,7 +5,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import {
     addMessageActionCreator,
     updateNewMessageTextActionCreator,
-} from "../../redux/store";
+} from "../../redux/dialogs-reducer";
 
 
 const Dialogs = (props) => {
