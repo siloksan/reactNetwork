@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom";
 import MyAvatar from "../../Profile/MyAvatar/MyAvatar";
 
 const SideBarItem = (props) => {
-    debugger
     let path = '/sidebar/' + props.id;
     return (<div>
         <MyAvatar/>
