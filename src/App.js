@@ -8,15 +8,13 @@ import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-// import {sideBar} from "./redux/sidebar-reducer";
 
-const App = (props) => {
+const App = () => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
-                {/*<Navbar state={props.state.sideBar}/>*/}
                 <div className='app-wrapper-content'>
                     <Routes>
                         <Route path='/profile' element={<Profile/>}/>
