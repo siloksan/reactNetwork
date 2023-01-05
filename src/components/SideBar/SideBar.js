@@ -1,14 +1,19 @@
 import React from "react";
-import classes from './SideBar.module.css'
-import SideBarItem from "./SideBarItem/SideBarItem";
+import styles from './SideBar.module.css'
 
 const SideBar = (props) => {
-    let sideBarElements = props.friends.map(sb => (<SideBarItem name={sb.name} key={sb.id} id={sb.id}/>))
-
-    return (
-        <div className={classes.content}>
-            {sideBarElements}
-        </div>
+    return (<div className={styles.sideBar}>{
+            props.users.map(u => <div key={u.id}>
+                {u.followed ? null :
+                    <div>
+                        <div>
+                            <img src={u.photoUrl} alt="avatar" className={styles.userPhoto}/>
+                        </div>
+                        <div>{u.fullName}</div>
+                    </div>
+                }
+            </div>)
+        }</div>
     )
 }
 

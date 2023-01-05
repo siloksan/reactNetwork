@@ -4,30 +4,38 @@ import styles from './Users.module.css'
 const Users = (props) => {
     if (props.users.length === 0) {
         props.setUsers([
-            {
-                id: 1,
-                followed: true,
-                photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
-                fullName: 'Dmitriy',
-                status: 'Studying the React',
-                location: {city: 'Minsk', country: 'Belarus'}
-            },
-            {
-                id: 2,
-                followed: false,
-                photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
-                fullName: 'John',
-                status: 'Studying the React',
-                location: {city: 'Yaroslavl', country: 'Russia'}
-            },
-            {
-                id: 3,
-                followed: true,
-                photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
-                fullName: 'Kseniya',
-                status: 'Studying the React',
-                location: {city: 'Yaroslavl', country: 'Russia'}
-            }
+                {
+                    id: 1,
+                    followed: true,
+                    photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
+                    fullName: 'Dmitriy',
+                    status: 'Studying the React',
+                    location: {city: 'Minsk', country: 'Belarus'}
+                },
+                {
+                    id: 2,
+                    followed: false,
+                    photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
+                    fullName: 'John',
+                    status: 'Studying the React',
+                    location: {city: 'Yaroslavl', country: 'Russia'}
+                },
+                {
+                    id: 3,
+                    followed: true,
+                    photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
+                    fullName: 'Kseniya',
+                    status: 'Studying the React',
+                    location: {city: 'Yaroslavl', country: 'Russia'}
+                },
+                {
+                    id: 4,
+                    followed: false,
+                    photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
+                    fullName: 'Anastasiya',
+                    status: 'Studying the React',
+                    location: {city: 'Yaroslavl', country: 'Russia'}
+                }
             ]
         )
     }
@@ -49,7 +57,7 @@ const Users = (props) => {
                     <div>{u.fullName}</div>
                     <div>{u.status}</div>
                 </span>
-                <span className={styles.location }>
+                <span className={styles.location}>
                     <div>{u.location.city}</div>
                     <div>{u.location.country}</div>
                 </span>
