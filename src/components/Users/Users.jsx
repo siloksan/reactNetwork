@@ -33,8 +33,8 @@ const Users = (props) => {
     }
 
     return (
-        props.users.map(u => <div key={u.id}>
-            <span>
+        props.users.map(u => <div className={styles.user} key={u.id}>
+            <span className={styles.photoFollow}>
                 <div>
                     <img src={u.photoUrl} alt="avatar" className={styles.userPhoto}/>
                 </div>
@@ -44,12 +44,12 @@ const Users = (props) => {
                         <button onClick={() => props.follow(u.id)}>Follow</button>}
                     </div>
             </span>
-            <span>
+            <span className={styles.aboutUser}>
                 <span>
                     <div>{u.fullName}</div>
                     <div>{u.status}</div>
                 </span>
-                <span>
+                <span className={styles.location }>
                     <div>{u.location.city}</div>
                     <div>{u.location.country}</div>
                 </span>

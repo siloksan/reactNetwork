@@ -1,5 +1,30 @@
-.userPhoto {
+.user {
+    display: grid;
+    grid-template-columns: 2fr 20fr;
+    /*background-color: white;*/
+    margin: 5px;
+}
+
+.user .photoFollow {
+    text-align: center;
+}
+
+.user .userPhoto {
     width: 60px;
     height: 60px;
     border-radius: 30px;
+}
+
+.user .aboutUser {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 2px solid deepskyblue;
+    background-color: aqua;
+    border-radius: 15px;
+}
+
+.aboutUser .location {
+    text-align: end;
+    margin-right: 10px;
 }
