@@ -1,50 +1,21 @@
 import React from "react";
 import styles from './Users.module.css'
+import axios from "axios";
+import userPhoto from "../../asets/images/user.png"
 
 const Users = (props) => {
-    if (props.users.length === 0) {
-        props.setUsers([
-                {
-                    id: 1,
-                    followed: true,
-                    photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
-                    fullName: 'Dmitriy',
-                    status: 'Studying the React',
-                    location: {city: 'Minsk', country: 'Belarus'}
-                },
-                {
-                    id: 2,
-                    followed: false,
-                    photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
-                    fullName: 'John',
-                    status: 'Studying the React',
-                    location: {city: 'Yaroslavl', country: 'Russia'}
-                },
-                {
-                    id: 3,
-                    followed: true,
-                    photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
-                    fullName: 'Kseniya',
-                    status: 'Studying the React',
-                    location: {city: 'Yaroslavl', country: 'Russia'}
-                },
-                {
-                    id: 4,
-                    followed: false,
-                    photoUrl: 'https://cdn-icons-png.flaticon.com/512/3874/3874573.png',
-                    fullName: 'Anastasiya',
-                    status: 'Studying the React',
-                    location: {city: 'Yaroslavl', country: 'Russia'}
-                }
-            ]
-        )
-    }
 
-    return (
+    let getUsers = () => {if (props.users.length === 0) {
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {props.setUsers(response.data.items)
+        })
+    }}
+    return <div>
+        <button onClick={getUsers}>Get Users</button>
+        {
         props.users.map(u => <div className={styles.user} key={u.id}>
             <span className={styles.photoFollow}>
                 <div>
-                    <img src={u.photoUrl} alt="avatar" className={styles.userPhoto}/>
+                    <img src={ u.photos.small != null ? u.photos.small = '' : userPhoto } alt="avatar" className={styles.userPhoto}/>
                 </div>
                 <div>
                     {u.followed ?
@@ -54,16 +25,17 @@ const Users = (props) => {
             </span>
             <span className={styles.aboutUser}>
                 <span>
-                    <div>{u.fullName}</div>
+                    <div>{u.name}</div>
                     <div>{u.status}</div>
                 </span>
                 <span className={styles.location}>
-                    <div>{u.location.city}</div>
-                    <div>{u.location.country}</div>
+                    <div>{"u.location.city"}</div>
+                    <div>{"u.location.country"}</div>
                 </span>
             </span>
         </div>)
-    )
+        }
+    </div>
 }
 
 export default Users;

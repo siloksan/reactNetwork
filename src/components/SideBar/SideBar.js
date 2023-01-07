@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './SideBar.module.css'
+import userPhoto from "../../asets/images/Avatar-PNG-Images-HD.png"
 
 const SideBar = (props) => {
     return (<div className={styles.sideBar}>{
@@ -7,9 +8,9 @@ const SideBar = (props) => {
                 {u.followed ? null :
                     <div>
                         <div>
-                            <img src={u.photoUrl} alt="avatar" className={styles.userPhoto}/>
+                            <img src={ u.photos.small != null ? u.photos.small = '' : userPhoto } alt="avatar" className={styles.userPhoto}/>
                         </div>
-                        <div>{u.fullName}</div>
+                        <div>{u.name}</div>
                     </div>
                 }
             </div>)
