@@ -28,3 +28,10 @@
     text-align: end;
     margin-right: 10px;
 }
+
+.selectPage {
+    font-weight: bold;
+}
+.sidePage span{
+    margin-left: 5px;
+}

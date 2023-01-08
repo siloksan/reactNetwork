@@ -8,9 +8,9 @@ const SideBar = (props) => {
                 {u.followed ? null :
                     <div>
                         <div>
-                            <img src={ u.photos.small != null ? u.photos.small = undefined : userPhoto } alt="avatar" className={styles.userPhoto}/>
+                            <img src={ u.photos.small != null ? u.photos.small : userPhoto } alt="avatar" className={styles.userPhoto}/>
                         </div>
-                        <div>{u.name}</div>
+                        <div  className={styles.name}>{u.name}</div>
                     </div>
                 }
             </div>)
