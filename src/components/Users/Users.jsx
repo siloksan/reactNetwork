@@ -21,7 +21,7 @@ let Users = (props) => {
         return <div>
             <div className={styles.sidePage}>
                 {slicedPages.map(p => {
-                    return <span className={props.currentPage === p ? styles.selectPage : undefined}
+                    return <span key={p} className={props.currentPage === p ? styles.selectPage : undefined}
                                  onClick={() => {
                                      props.onPageChanged(p)
                                  }}>{p}</span>
