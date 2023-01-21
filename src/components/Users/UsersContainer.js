@@ -1,14 +1,13 @@
 import {connect} from "react-redux";
 import Users from "./Users";
 import {
-    follow,
     setCurrentPage,
-    unfollow,
     toggleFollowingProgress, getUserThunkCreator, unfollowThunkCreator, followThunkCreator
 } from "../../redux/users-reducer";
 import React from "react";
 import Preloader from "../Preloader/Preloader";
-import WithAuthRedirect from "../hoc/WithAuthRedirect";
+import WithAuthRedirect from "../../hoc/WithAuthRedirect";
+import {compose} from "redux";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -25,11 +24,10 @@ class UsersContainer extends React.Component {
             <div>{this.props.isFetching ? <Preloader/> : null}</div>
             <Users totalUsersCount={this.props.totalUsersCount} pageSize={this.props.pageSize}
                    currentPage={this.props.currentPage} onPageChanged={this.onPageChanged} users={this.props.users}
-                   follow={this.props.follow} unfollow={this.props.unfollow}
-                   toggleFollowingProgress={this.props.toggleFollowingProgress}
                    followingInProgress={this.props.followingInProgress}
-                   unfollowThunkCreator={this.props.unfollowThunkCreator}
-                   followThunkCreator={this.props.followThunkCreator}/>
+                unfollowThunkCreator={this.props.unfollowThunkCreator}
+                followThunkCreator={this.props.followThunkCreator}
+            />
         </>
     }
 }
@@ -45,15 +43,12 @@ let mapStateToProps = (state) => {
     }
 }
 
-let AuthRedirectComponent = WithAuthRedirect(UsersContainer);
-
-export default connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setCurrentPage,
-    toggleFollowingProgress,
-    getUserThunkCreator,
-    unfollowThunkCreator,
-    followThunkCreator,
-})(AuthRedirectComponent);
-
+export default compose(connect(mapStateToProps, {
+        setCurrentPage,
+        toggleFollowingProgress,
+        getUserThunkCreator,
+        unfollowThunkCreator,
+        followThunkCreator
+    }),
+    WithAuthRedirect
+)(UsersContainer);

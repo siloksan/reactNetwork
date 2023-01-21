@@ -16,7 +16,7 @@ const WithAuthRedirect = (Component) => {
             return <Component {...this.props}/>
         }
     }
-    return connect(mapStateToPropsForRedirect) (RedirectComponent);
+    return connect(mapStateToPropsForRedirect) (RedirectComponent);// Димыч создал переменную и отдал ей это значение
 
 }
 
