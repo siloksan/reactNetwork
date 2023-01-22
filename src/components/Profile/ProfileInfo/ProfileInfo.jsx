@@ -1,5 +1,6 @@
 import React from "react";
 import s from './ProfileInfo.module.css'
+import ProfileStatus from './ProfileStatus.jsx'
 import Preloader from "../../Preloader/Preloader";
 import userPhoto from "../../../asets/images/user.png";
 
@@ -13,10 +14,11 @@ const ProfileInfo = (props) => {
                 <img
                     src="https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg"
                     alt=""/>
-            </div>
+                </div>
             <div className={s.profile}>
                 <div className={s.descriptionBlock}>
                     <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} alt="avatar"/>
+                    <ProfileStatus status='My status'/>
                 </div>
                 <div className={s.aboutMe}>
                     <div>About me: {props.profile.aboutMe}</div>
