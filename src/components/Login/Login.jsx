@@ -1,5 +1,7 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
+import {connect} from "react-redux";
+import {authorizeUserThunkCreator} from "../../redux/auth-reducer";
 //компонента для формы Авторизации
 const LoginForm = (props) => {
     return (
@@ -30,3 +32,5 @@ const Login = (props) => {
 }
 
 export default Login;
+
+// export default connect(mapStateToProps, {authorizeUserThunkCreator})(Login);

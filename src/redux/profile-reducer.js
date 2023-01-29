@@ -2,7 +2,6 @@ import {profileAPI, UsersAPI} from "../api/api";
 
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 
@@ -13,7 +12,6 @@ let initialState = {
         {id: 2, post: 'It\'s my first post!', like: 20},
         {id: 3, post: 'You look nice', like: 23}
     ],
-    newPostText: 'It Mass Transit!',
     profile: null,
     status: ''
 }
@@ -23,13 +21,7 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST:
             return {
                 ...state,
-                posts: [...state.posts, {id: 4, post: state.newPostText, like: 0}],
-                newPostText: ''
-            };
-        case UPDATE_NEW_POST_TEXT:
-            return {
-                ...state,
-                newPostText: action.newText
+                posts: [...state.posts, {id: 4, post: action.newPostElement, like: 0}],
             };
         case SET_USER_PROFILE:
             return {
@@ -46,8 +38,8 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+// передаём параметр содержащий в качестве значения новое сообщение в АС
+export const addPostActionCreator = (newPostElement) => ({type: ADD_POST, newPostElement});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 

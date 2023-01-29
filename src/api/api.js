@@ -53,3 +53,12 @@ export const profileAPI = {
         return instance.put(`profile/status`, { status: status })
     }
 }
+//
+// export const authAPI = {
+//     authUser(userId) {
+//         return instance.post(`auth/login/${userId}`)
+//             .then(response => {
+//                 return response.data
+//             })
+//     }
+// }
