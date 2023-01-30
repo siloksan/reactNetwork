@@ -1,8 +1,10 @@
 import React from "react";
 import s from './ProfileInfo.module.css'
 import ProfileStatus from './ProfileStatus.jsx'
-import Preloader from "../../Preloader/Preloader";
+import Preloader from "../../common/Preloader/Preloader";
 import userPhoto from "../../../asets/images/user.png";
+import solarFlare from "../../../asets/images/solar-flare.en.jpg";
+
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -12,8 +14,8 @@ const ProfileInfo = (props) => {
         <div>
             <div>
                 <img
-                    src="https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg"
-                    alt=""/>
+                    src={solarFlare}
+                    alt="solar flare"/>
                 </div>
             <div className={s.profile}>
                 <div className={s.descriptionBlock}>

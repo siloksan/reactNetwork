@@ -5,7 +5,7 @@ import {
     toggleFollowingProgress, getUserThunkCreator, unfollowThunkCreator, followThunkCreator
 } from "../../redux/users-reducer";
 import React from "react";
-import Preloader from "../Preloader/Preloader";
+import Preloader from "../common/Preloader/Preloader";
 import WithAuthRedirect from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
 

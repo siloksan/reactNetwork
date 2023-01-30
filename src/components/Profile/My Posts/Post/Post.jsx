@@ -1,6 +1,6 @@
 import React from "react";
 import s from './Post.module.css'
-import MyAvatar from "../../MyAvatar/MyAvatar";
+import MyAvatar from "../../../common/MyAvatar/MyAvatar";
 
 
 const Post = (props) => {

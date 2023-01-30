@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './../Dialogs.module.css';
 import {NavLink} from "react-router-dom";
-import MyAvatar from "../../Profile/MyAvatar/MyAvatar";
+import MyAvatar from "../../common/MyAvatar/MyAvatar";
 
 const DialogItem = (props) => {
     let path = '/dialogs/' + props.id;

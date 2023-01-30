@@ -2,13 +2,17 @@ import React from "react";
 import s from './MyPosts.module.css'
 import Post from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
-
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
+import {Textarea} from "../../common/FormsControls/FormsControls";
+//создаём отдельную переменную за пределами формы, иначе будет зацикливание
+let maxLength = maxLengthCreator(20);
 //component for form post
 const MyPostsForm = (props) => {
     return (//в качестве аргумента для form передаём через пропсы handleSubmit("обработчик отправки формы")
         <form onSubmit={props.handleSubmit}>
             <div>
-                <div><Field placeholder={'Write already'} component={'textarea'} name={'newPostElement'}/></div>
+                <div><Field placeholder={'Write already'} component={Textarea} name={'newPostElement'}
+                validate={[required, maxLength]}/></div>
             </div>
             <div>
                 <button>Add post</button>
