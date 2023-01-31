@@ -27,12 +27,6 @@ export const UsersAPI = {
                 return response.data
             })
     },
-    authorizeUser() {
-        return instance.get(`auth/me`)
-            .then(response => {
-                return response.data
-            })
-    },
     getUserProfile(userId) {
         console.warn('Please use profileAPI');
         return profileAPI.getUserProfile(userId)
@@ -53,12 +47,17 @@ export const profileAPI = {
         return instance.put(`profile/status`, { status: status })
     }
 }
-//
-// export const authAPI = {
-//     authUser(userId) {
-//         return instance.post(`auth/login/${userId}`)
-//             .then(response => {
-//                 return response.data
-//             })
-//     }
-// }
+
+export const authAPI = {
+    authorizeUser() {
+        return instance.get(`auth/me`);
+    },
+    //отпраляем пост запрос на сервер с данными указанными в параметрах, по умолчанию rememberMe присвоим значение false
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, { email, password, rememberMe });
+    },
+    logout() {
+        return instance.delete(`auth/login`);
+    }
+
+}
