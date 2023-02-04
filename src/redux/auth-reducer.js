@@ -22,19 +22,21 @@ const authReducer = (state = initialState, action) => {
     }
 }
 //в качестве параметров в АС передаём соотвествующие свойства из STATE
-export const setAuthUserData = (userId, email, login, isAuth) => ({type: SET_USER_DATA, payload: {userId, email, login, isAuth}})
+export const setAuthUserData = (userId, email, login, isAuth) => ({
+    type: SET_USER_DATA,
+    payload: {userId, email, login, isAuth}
+})
 
-export const authorizeUserThunkCreator = () => {//getUserData
-    return (dispatch) => {
-        authAPI.authorizeUser()
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    let {id, email, login} = response.data.data;
-                    dispatch(setAuthUserData(id, email, login, true));//isAuth после авторизации принимает значение true
-                }
-            })
-    }
+export const authorizeUserThunkCreator = () => (dispatch) => {//getUserData
+    return authAPI.authorizeUser()
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                let {id, email, login} = response.data.data;
+                dispatch(setAuthUserData(id, email, login, true));//isAuth после авторизации принимает значение true
+            }
+        })
 }
+
 
 export const login = (email, password, rememberMe) => (dispatch) => {
     authAPI.login(email, password, rememberMe)
@@ -43,10 +45,10 @@ export const login = (email, password, rememberMe) => (dispatch) => {
                 //если мы логинимся мы заново диспатчим thunk указаннyю ниже
                 dispatch(authorizeUserThunkCreator())
             } else {
-                 //если в ответе с сервера приходит resultCode отличный от 0, то мы диспатчим stopSubmit("название формы",
+                //если в ответе с сервера приходит resultCode отличный от 0, то мы диспатчим stopSubmit("название формы",
                 //ошибка - в данном случае она приходит в виде массива см. response  docAPI
-                 let messages = response.data.messages.length > 0 ?
-                     response.data.messages[0] : 'Some error';
+                let messages = response.data.messages.length > 0 ?
+                    response.data.messages[0] : 'Some error';
                 dispatch(stopSubmit('login', {_error: messages}))
             }
         })
