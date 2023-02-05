@@ -53,7 +53,7 @@ class App extends React.Component {
 // Передача этого аргумента connect() приводит к подписке компонента-контейнера на обновления хранилища Redux.
 // Это означает, что функция mapStateToProps будет вызываться каждый раз, когда состояние хранилища изменяется.
 // Если вам слежение за обновлениями состояния не интересно, передайте connect() в качестве значения этого аргумента undefined или null.
-// я передаю свойство initialized
+//в нашем случае я передаю свойство initialized
 const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
