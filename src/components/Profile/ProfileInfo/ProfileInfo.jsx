@@ -1,9 +1,9 @@
 import React from "react";
 import s from './ProfileInfo.module.css'
-import ProfileStatus from './ProfileStatus.jsx'
 import Preloader from "../../common/Preloader/Preloader";
 import userPhoto from "../../../asets/images/user.png";
 import solarFlare from "../../../asets/images/solar-flare.en.jpg";
+import ProfileStatusWithHook from "./ProfileStatusWithHook";
 
 
 const ProfileInfo = (props) => {
@@ -20,7 +20,7 @@ const ProfileInfo = (props) => {
             <div className={s.profile}>
                 <div className={s.descriptionBlock}>
                     <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} alt="avatar"/>
-                    <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                    <ProfileStatusWithHook status={props.status} updateStatus={props.updateStatus}/>
                 </div>
                 <div className={s.aboutMe}>
                     <div>About me: {props.profile.aboutMe}</div>
