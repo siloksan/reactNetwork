@@ -7,6 +7,7 @@ import ProfileStatusWithHook from "./ProfileStatusWithHook";
 
 
 const ProfileInfo = (props) => {
+
     if (!props.profile) {
         return <Preloader/>
     }
