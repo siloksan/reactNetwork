@@ -25,7 +25,7 @@ const MyPostReduxForm = reduxForm({form: 'ProfileAddMyPostForm'})(MyPostsForm)
 
 const MyPosts = React.memo(props =>{
     console.log('Render My Post');
-    let postsElements = props.posts.map(p => <Post message={p.post} key={p.id} like={p.like}/>)
+    let postsElements = [...props.posts].reverse().map(p => <Post message={p.post} key={p.id} like={p.like}/>)
 
     //создаём callback функцию с параметром value, а value это объект.
     const addNewPost = (value) => {
