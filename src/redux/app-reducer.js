@@ -1,6 +1,6 @@
 import {authorizeUserThunkCreator} from "./auth-reducer";
-
-const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS';
+//Перед названием action нужно использовать название редюсеров
+const INITIALIZED_SUCCESS = 'app/INITIALIZED_SUCCESS';
 
 let initialState = {
     initialized: false

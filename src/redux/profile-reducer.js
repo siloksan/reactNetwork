@@ -50,27 +50,21 @@ export const deletePostActionCreator = (postId) => ({type: DELETE_POST, postId})
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 
-export const profileThunkCreator = (userId) => {//getUserProfile
-    return (dispatch) => {
-        UsersAPI.getUserProfile(userId)
-            .then(data => {
-                dispatch(setUserProfile(data));
-            })
+export const profileThunkCreator = (userId) => async (dispatch) => {//getUserProfile
+    let response = await UsersAPI.getUserProfile(userId)
+    dispatch(setUserProfile(response));
+}
+
+export const getStatusThunk = (userId) => async (dispatch) => {//getStatus
+    let response = await profileAPI.getStatus(userId)
+    dispatch(setStatus(response.data));
+}
+
+export const updateStatusThunk = (status) => async (dispatch) => {//getUpdateStatus
+    let response = await profileAPI.updateStatus(status)
+    if (response.data.resultCode === 0) {
+        dispatch(setStatus(status));
     }
-}
-
-export const getStatusThunk = (userId) => (dispatch) => {//getStatus
-    profileAPI.getStatus(userId).then(response => {
-        dispatch(setStatus(response.data));
-    })
-}
-
-export const updateStatusThunk = (status) => (dispatch) => {//getUpdateStatus
-    profileAPI.updateStatus(status).then(response => {
-        if (response.data.resultCode === 0) {
-            dispatch(setStatus(status));
-        }
-    })
 }
 
 

@@ -6,9 +6,9 @@ import solarFlare from "../../../asets/images/solar-flare.en.jpg";
 import ProfileStatusWithHook from "./ProfileStatusWithHook";
 
 
-const ProfileInfo = (props) => {
+const ProfileInfo = ({profile, updateStatus, status}) => {
 
-    if (!props.profile) {
+    if (!profile) {
         return <Preloader/>
     }
     return (
@@ -20,13 +20,13 @@ const ProfileInfo = (props) => {
                 </div>
             <div className={s.profile}>
                 <div className={s.descriptionBlock}>
-                    <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} alt="avatar"/>
-                    <ProfileStatusWithHook status={props.status} updateStatus={props.updateStatus}/>
+                    <img src={profile.photos.large != null ? profile.photos.large : userPhoto} alt="avatar"/>
+                    <ProfileStatusWithHook status={status} updateStatus={updateStatus}/>
                 </div>
                 <div className={s.aboutMe}>
-                    <div>About me: {props.profile.aboutMe}</div>
-                    <div>Full name: {props.profile.fullName}</div>
-                    <div>My instagram: {props.profile.contacts.instagram}</div>
+                    <div>About me: {profile.aboutMe}</div>
+                    <div>Full name: {profile.fullName}</div>
+                    <div>My instagram: {profile.contacts.instagram}</div>
                 </div>
             </div>
         </div>

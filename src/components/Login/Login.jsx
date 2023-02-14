@@ -1,8 +1,8 @@
 import React from "react";
-import {Field, reduxForm} from "redux-form";
+import {reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
-import {Input} from "../common/FormsControls/FormsControls";
+import {createField, Input} from "../common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {Navigate} from "react-router-dom";
 import style from '../common/FormsControls/FormControls.module.css'
@@ -10,31 +10,24 @@ import style from '../common/FormsControls/FormControls.module.css'
 //создаём отдельную переменную за пределами формы, иначе будет зацикливание
 let maxLength = maxLengthCreator(30);
 //компонента для формы Авторизации
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return (
         //метод 'handleSubmit' - вроде как предупреждает что данные собраны и предоставляет их дальше через HOC в контейнерную компоненту!?
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field placeholder={'Email'} component={Input} name={'email'}
-                       validate={[required, maxLength]}/>
-            </div>
-            <div>
-                <Field placeholder={'Password'} component={Input} name={'password'} type={'password'}
-                       validate={[required, maxLength]}/>
-            </div>
-            <div>
-                <Field component={'input'} type={"checkbox"} name={'rememberMe'}/>
-                remember me
-            </div>
-            {/*создаём условие для отображения ошибки*/}
-            { props.error && <div className={style.formSummaryError}>{props.error}</div> }
+        <form onSubmit={handleSubmit}>
+            {/*createField - общая функция для полей вода*/}
+            { createField('Email', Input, 'email', [required, maxLength]) }
+            { createField('Password', Input, 'password', [required, maxLength], {type: 'password'})}
+            { createField(null, 'input', 'rememberMe', [], {type: "checkbox"},  'remember me')}
+            {/*</div>*/}
+            {/*/!*создаём условие для отображения ошибки*!/*/}
+            { error && <div className={style.formSummaryError}>{error}</div> }
              <div>
                 <button>Login</button>
             </div>
         </form>
     )
 }
-//Контейнерная компонента для ''LoginForm', 'reduxForm' - HOC
+//Контейнерная компонента для 'LoginForm', 'reduxForm' - HOC
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
 //Общая компонента для формы авторизациии ("LoginForm")
