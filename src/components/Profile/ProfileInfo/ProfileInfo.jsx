@@ -3,7 +3,7 @@ import s from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
 import userPhoto from "../../../asets/images/user.png";
 import solarFlare from "../../../asets/images/solar-flare.en.jpg";
-import ProfileStatusWithHook from "./ProfileStatusWithHook";
+import ProfileStatus from "./ProfileStatus";
 
 
 const ProfileInfo = ({profile, updateStatus, status}) => {
@@ -21,7 +21,7 @@ const ProfileInfo = ({profile, updateStatus, status}) => {
             <div className={s.profile}>
                 <div className={s.descriptionBlock}>
                     <img src={profile.photos.large != null ? profile.photos.large : userPhoto} alt="avatar"/>
-                    <ProfileStatusWithHook status={status} updateStatus={updateStatus}/>
+                    <ProfileStatus status={status} updateStatus={updateStatus}/>
                 </div>
                 <div className={s.aboutMe}>
                     <div>About me: {profile.aboutMe}</div>
