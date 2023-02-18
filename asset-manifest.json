@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/reactNetwork/static/css/main.ac390a32.css",
+    "main.js": "/reactNetwork/static/js/main.1afd8e8b.js",
+    "static/css/489.8fd9b42b.chunk.css": "/reactNetwork/static/css/489.8fd9b42b.chunk.css",
+    "static/js/489.b14d313e.chunk.js": "/reactNetwork/static/js/489.b14d313e.chunk.js",
+    "static/css/331.681e6968.chunk.css": "/reactNetwork/static/css/331.681e6968.chunk.css",
+    "static/js/331.6054aa12.chunk.js": "/reactNetwork/static/js/331.6054aa12.chunk.js",
+    "static/css/731.cf997be4.chunk.css": "/reactNetwork/static/css/731.cf997be4.chunk.css",
+    "static/js/731.706fd6a5.chunk.js": "/reactNetwork/static/js/731.706fd6a5.chunk.js",
+    "static/js/787.0ebae10e.chunk.js": "/reactNetwork/static/js/787.0ebae10e.chunk.js",
+    "static/media/solar-flare.en.jpg": "/reactNetwork/static/media/solar-flare.en.b06142f342a311e6e7c0.jpg",
+    "static/media/1474.gif": "/reactNetwork/static/media/1474.11f55e202ca1590418dd.gif",
+    "index.html": "/reactNetwork/index.html",
+    "main.ac390a32.css.map": "/reactNetwork/static/css/main.ac390a32.css.map",
+    "main.1afd8e8b.js.map": "/reactNetwork/static/js/main.1afd8e8b.js.map",
+    "489.8fd9b42b.chunk.css.map": "/reactNetwork/static/css/489.8fd9b42b.chunk.css.map",
+    "489.b14d313e.chunk.js.map": "/reactNetwork/static/js/489.b14d313e.chunk.js.map",
+    "331.681e6968.chunk.css.map": "/reactNetwork/static/css/331.681e6968.chunk.css.map",
+    "331.6054aa12.chunk.js.map": "/reactNetwork/static/js/331.6054aa12.chunk.js.map",
+    "731.cf997be4.chunk.css.map": "/reactNetwork/static/css/731.cf997be4.chunk.css.map",
+    "731.706fd6a5.chunk.js.map": "/reactNetwork/static/js/731.706fd6a5.chunk.js.map",
+    "787.0ebae10e.chunk.js.map": "/reactNetwork/static/js/787.0ebae10e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac390a32.css",
+    "static/js/main.1afd8e8b.js"
+  ]
+}
