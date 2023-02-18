@@ -19,7 +19,8 @@ const ProfileContainer = lazy(() =>
     import('./components/Profile/ProfileContainer'));
 const UsersContainer = lazy(() =>
     import('./components/Users/UsersContainer'));
-const DialogsContainer = lazy(() => import('./components/Dialogs/DialogsContainer'));
+const DialogsContainer = lazy(() =>
+    import('./components/Dialogs/DialogsContainer'));
 
 class App extends React.Component {
     //componentDidMount() вызывается сразу после монтирования (то есть, вставки компонента в DOM).
